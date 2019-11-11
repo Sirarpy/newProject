@@ -1,0 +1,169 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+@grey: grey;
+@white: white;
+
+@width: 100%;
+
+
+.floating{
+    float: left;
+}
+header{
+    overflow: hidden;
+    width: @width;
+}
+.header_container{
+    width: @width - 20%;
+    margin: 0 auto;
+  
+    .header_logo{
+        .floating();
+        width: 20%;
+        padding: 10px 0;
+        img{
+            height: 100%;
+        }
+    }
+    nav{
+        width: @width - 20%;
+        .floating();
+        text-align: right;
+        padding: 25px 0;
+        font-size: 1.5vw;
+        @media (max-width: 576px){
+            font-size: 2vw;
+        }
+        
+        ul{
+            float: right;
+            list-style: none;
+            li{
+                .floating();
+                padding-left: 35px;
+                    a {
+                        text-decoration: none;
+                        color: @grey;
+                        &:hover{
+                            border-bottom: 1px solid @grey;
+                        }
+                    }
+                
+                    @media (max-width: 576px){
+                        padding-left: 20px;
+                    }
+                }
+            }
+        } 
+    }
+
+section{
+    width: @width;
+   height: 500px;
+    background-color: @grey;
+    text-align: center;
+    color: @white;
+    .section_content{
+                position: relative;
+        padding: 80px 0;
+        width: @width - 20%;
+        margin: auto;
+        .section_headind{
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .section_text{
+            width: @width - 50%;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 20px;
+            @media (max-width: 576px){
+                width: @width;
+            }
+            
+        }
+        button {
+           width: 20%;
+           margin: 20px 0 60px 0;
+           padding: 10px;
+           border: none;
+           color: @white;
+           background-color: #6d6d6d;
+           border-radius: 30px;
+           cursor: pointer;
+           &:hover{
+               color: @grey;
+               background-color: @white;
+               font-weight: bold;
+           }
+           @media (max-width: 576px){
+            width: 45%;
+        }
+        }
+        .section_Items{
+            position: absolute;
+            width: @width - 20%;
+            left: 10%;
+            margin-bottom: 80px;
+            ul{
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                @media (max-width: 768px){
+                    flex-direction: column;
+                    margin: auto;
+                    width: @width - 50%;
+                }
+            }
+           ul li{
+               list-style: none;
+            .floating();
+            width: 30%;
+            background-color: @white;
+            color: @grey;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 3px 14px 20px -12px rgba(153,153,153,0.8);
+            @media (max-width: 768px){
+                margin-bottom: 10px;
+                width: @width;
+            }
+            &:hover{
+                box-shadow: 5px 20px 30px -5px rgb(153, 153, 153);
+            }
+            img{
+                width: 25%;
+                display: inline-block;
+                margin: 40px;
+                @media (max-width: 920px){
+                    margin: 10px;
+                    width: 30%;
+                }
+            }
+            a{
+                display: block;
+                font-size: 16px;
+                text-decoration: none;
+                color: @grey;
+                font-weight: bold;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+            p{
+                font-size: 12px;
+                line-height: 20px;
+                margin-bottom: 20px;
+                @media (max-width: 920px){
+                    font-size: .8rem;
+                }
+            }
+           }
+        }
+    }
+}
